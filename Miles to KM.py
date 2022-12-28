@@ -5,7 +5,7 @@ mi = float(input("Input your distance in miles: "))
 kilom = mi*1.609
 print("Miles to KM:" , kilom)
 
-print() #leaves a space between km and m calculations
+print()
 
 km = float(input("Input your distance in KM: "))
 miles = km*0.609
