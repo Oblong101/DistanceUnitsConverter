@@ -1,12 +1,13 @@
-#A simple program to convert miles to kilometres and vice versa
-#Currently you can only convert km to miles by doing miles to km first
+x = input("Km to M(KTM) or M to Km(MTK)? ")
+if x == "KTM":
+    km1 = float(input("Input the distance in Km: "))
+    miles1 = km1*1.609
+    print(km1, "in miles is", miles1)
 
-m = float(input("Input your distance in miles: "))
-km = mi*1.609
-print("Miles to KM:" , kilom)
+if x == "MTK":
+    miles2 = float(input("Input the distance in M: "))
+    km2 = miles2*0.609
+    print(miles2, "in Km is", km2)
 
-print()
-
-kilometres = float(input("Input your distance in KM: "))
-miles = km*0.609
-print("KM to Miles:" , miles)
+else:
+    print("Error. Calculation must be either MTK(miles to kilometres) or KTM(kilometres to miles)")
