@@ -1,13 +1,25 @@
-x = input("Km to M(KTM) or M to Km(MTK)? ")
-if x == "KTM":
-    km1 = float(input("Input the distance in Km: "))
-    miles1 = km1*1.609
-    print(km1, "Kilometres in miles is", miles1, "Miles")
+from inquirer import prompt, List, Text
 
-if x == "MTK":
-    miles2 = float(input("Input the distance in M: "))
-    km2 = miles2*0.609
-    print(miles2, "Miles in Km is", km2, "Kilometres")
+questions = [
+    List('method',
+        message="Kilometers to Miles (KTM) or Miles to Kilometers (MTK)?",
+        choices=['KTM', 'MTK'],
+    ),
+    Text('distance',
+        message="Input the distance",
+    )
+]
 
-else:
-    print("Error. Calculation must be either MTK(miles to kilometres) or KTM(kilometres to miles)")
+answers = prompt(questions)
+
+match answers['method']:
+    case 'KTM':
+        convertedDistance = float(answers['distance']) * 1.60934
+        print(f"{convertedDistance} kilometers")
+        pass
+    case 'MTK':
+        convertedDistance = float(answers['distance']) / 1.60934
+        print(f"{convertedDistance} miles")
+        pass
+    case _:
+        pass
