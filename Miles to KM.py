@@ -13,11 +13,11 @@ questions = [
 answers = prompt(questions)
 
 match answers['method']:
-    case 'KTM':
+    case 'MTK':
         convertedDistance = float(answers['distance']) * 1.60934
         print(f"{convertedDistance} kilometers")
         pass
-    case 'MTK':
+    case 'KTM':
         convertedDistance = float(answers['distance']) / 1.60934
         print(f"{convertedDistance} miles")
         pass
